@@ -102,18 +102,19 @@ def main():
     if script_dir.name == "scripts":
         project_root = script_dir.parent
     else:
-        project_root = Path("bluestock_mf_capstone")
+        project_root = Path(".")
         
     raw_dir = project_root / "data" / "raw"
     raw_dir.mkdir(parents=True, exist_ok=True)
     
-    # 5 Key Schemes as per requirements
+    # 6 Schemes as per requirements (HDFC Top 100 + 5 Key Schemes)
     schemes = {
         125497: "HDFC Top 100 Direct",
         119551: "SBI Bluechip Direct",
         120503: "ICICI Bluechip Direct",
         118632: "Nippon Large Cap Direct",
-        119092: "Axis Bluechip Direct"
+        119092: "Axis Bluechip Direct",
+        120841: "Kotak Bluechip Direct"
     }
     
     success_count = 0

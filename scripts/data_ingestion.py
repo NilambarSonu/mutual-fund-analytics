@@ -25,7 +25,7 @@ def create_directory_structure():
     print("⏳ [INFO] Setting up project directory structure...")
     
     # Define project root
-    project_root = Path("bluestock_mf_capstone")
+    project_root = Path(".")
     
     # Define directories to create
     directories = [
@@ -72,6 +72,11 @@ def copy_raw_datasets(project_root):
         src_file = source_dir / file
         dest_file = dest_dir / file
         
+        # Skip if source and destination are the exact same path
+        if src_file.resolve() == dest_file.resolve():
+            print(f"ℹ️ File is already in place: {file}")
+            continue
+            
         # Avoid copying if file already exists in destination
         if not dest_file.exists():
             shutil.copy2(src_file, dest_file)

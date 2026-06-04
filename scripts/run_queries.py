@@ -21,7 +21,7 @@ def main():
     if script_dir.name == "scripts":
         project_root = script_dir.parent
     else:
-        project_root = Path("bluestock_mf_capstone")
+        project_root = Path(".")
         
     db_path = project_root / "data" / "db" / "bluestock_mf.db"
     queries_path = project_root / "sql" / "queries.sql"

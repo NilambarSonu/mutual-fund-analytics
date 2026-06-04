@@ -34,7 +34,7 @@ def setup_paths():
     if script_dir.name == "scripts":
         project_root = script_dir.parent
     else:
-        project_root = Path("bluestock_mf_capstone")
+        project_root = Path(".")
         
     # Ensure processed and db directories exist
     (project_root / "data" / "processed").mkdir(parents=True, exist_ok=True)

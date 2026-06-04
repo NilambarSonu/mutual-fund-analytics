@@ -3,8 +3,8 @@
 ============================================================
 
 Source Files:
-  - Fund Master: C:\Users\Asus\OneDrive\Code_X\DAY 1 — Project Setup + Data Ingestion (ETL)\bluestock_mf_capstone\data\raw\01_fund_master.csv
-  - NAV History: C:\Users\Asus\OneDrive\Code_X\DAY 1 — Project Setup + Data Ingestion (ETL)\bluestock_mf_capstone\data\raw\02_nav_history.csv
+  - Fund Master: C:\Users\Asus\OneDrive\Code_X\DAY 1 — Project Setup + Data Ingestion (ETL)\data\raw\01_fund_master.csv
+  - NAV History: C:\Users\Asus\OneDrive\Code_X\DAY 1 — Project Setup + Data Ingestion (ETL)\data\raw\02_nav_history.csv
 
 Analysis:
   - Total unique AMFI codes in Fund Master: 40

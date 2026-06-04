@@ -32,7 +32,7 @@ def setup_directories():
     if script_dir.name == "scripts":
         project_root = script_dir.parent
     else:
-        project_root = Path("bluestock_mf_capstone")
+        project_root = Path(".")
         
     charts_dir = project_root / "reports" / "charts"
     charts_dir.mkdir(parents=True, exist_ok=True)

@@ -3,12 +3,12 @@
 This repository contains the project codebase for the **Bluestock Fintech Mutual Fund Analytics** capstone project.
 The goal of this project is to build an ETL data pipeline, perform database mappings, evaluate performance metrics, and create an analytical dashboard for mutual fund schemes.
 
-## Project Structure
+# Project Structure
 
 The project directory is structured as follows:
 
 ```
-bluestock_mf_capstone/
+. (Repository Root)
 ├── data/
 │   ├── raw/        ← Contains raw CSV datasets & fetched API NAV data
 │   ├── processed/  ← Will contain cleaned/transformed CSV datasets
@@ -42,17 +42,17 @@ The Day 1 pipeline performs setup, ingestion, API fetching, and AMFI code valida
 #### Step 1: Data Ingestion & Directory Initialization
 Run `data_ingestion.py` from the root directory to create the project directory structure, load the 10 CSV datasets, check for anomalies, and write an ingestion summary:
 ```bash
-python data_ingestion.py
+python scripts/data_ingestion.py
 ```
 *Outputs:*
-- Folder structure created under `bluestock_mf_capstone/`
-- Datasets copied to `bluestock_mf_capstone/data/raw/`
-- Summary report saved as `bluestock_mf_capstone/data/raw/ingestion_summary.txt`
+- Folder structure created under `./`
+- Datasets copied to `data/raw/`
+- Summary report saved as `data/raw/ingestion_summary.txt`
 
 #### Step 2: Fetch Live NAV
-Run `live_nav_fetch.py` to retrieve the historical and live NAV records for 5 key schemes from `mfapi.in`:
+Run `live_nav_fetch.py` to retrieve the historical and live NAV records for 6 key schemes from `mfapi.in`:
 ```bash
-python bluestock_mf_capstone/scripts/live_nav_fetch.py
+python scripts/live_nav_fetch.py
 ```
 *Outputs:*
 - `live_nav_125497.csv` (HDFC Top 100 Direct)
@@ -60,18 +60,19 @@ python bluestock_mf_capstone/scripts/live_nav_fetch.py
 - `live_nav_120503.csv` (ICICI Bluechip Direct)
 - `live_nav_118632.csv` (Nippon Large Cap Direct)
 - `live_nav_119092.csv` (Axis Bluechip Direct)
+- `live_nav_120841.csv` (Kotak Bluechip Direct)
 
 #### Step 3: Validate AMFI Codes
 Run `validate_amfi.py` to check the data integrity of AMFI code mappings between the fund master and historical NAV datasets:
 ```bash
-python bluestock_mf_capstone/scripts/validate_amfi.py
+python scripts/validate_amfi.py
 ```
 *Outputs:*
-- Data quality report saved as `bluestock_mf_capstone/data/raw/data_quality_report.txt`
+- Data quality report saved as `data/raw/data_quality_report.txt`
 
 #### Step 4: Jupyter Notebook Exploration
-Explore the `01_data_ingestion.ipynb` notebook under `bluestock_mf_capstone/notebooks/` to view distributions of funds per fund house and metadata summaries.
+Explore the `01_data_ingestion.ipynb` notebook under `notebooks/` to view distributions of funds per fund house and metadata summaries.
 To open the notebook:
 ```bash
-jupyter notebook bluestock_mf_capstone/notebooks/01_data_ingestion.ipynb
+jupyter notebook notebooks/01_data_ingestion.ipynb
 ```

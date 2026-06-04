@@ -144,7 +144,7 @@ def main():
     if script_dir.name == "scripts":
         project_root = script_dir.parent
     else:
-        project_root = Path("bluestock_mf_capstone")
+        project_root = Path(".")
         
     validate_codes(project_root)
 
