@@ -1,0 +1,25 @@
+BLUESTOCK MF ANALYTICS — POWER BI DASHBOARD PLACEHOLDER
+=========================================================
+This file is a placeholder for bluestock_mf_dashboard.pbix.
+
+To reproduce the Power BI dashboard:
+1. Open Power BI Desktop.
+2. Click "Get Data" → "SQLite" (or via ODBC connector).
+3. Connect to: data/db/bluestock_mf.db
+4. Load all 8 tables:
+     dim_fund, fact_nav, benchmark_indices, aum_trend,
+     investor_transactions, portfolio_holdings, monthly_sip_inflows,
+     category_inflows
+5. Create relationships on:
+     - dim_fund[amfi_code] ↔ fact_nav[amfi_code]
+     - dim_fund[amfi_code] ↔ investor_transactions[amfi_code]
+     - dim_fund[amfi_code] ↔ portfolio_holdings[amfi_code]
+6. Build 4 pages mirroring the PNG exports in this folder:
+     page_1_industry_overview.png
+     page_2_fund_performance.png
+     page_3_investor_analytics.png
+     page_4_sip_market_trends.png
+7. Apply Bluestock colour theme (#1B3A6B, #F5811F) and export as .pbix.
+
+The 4-page PNG exports and Dashboard.pdf in this folder serve as
+the visual deliverable for Day 5 of the internship assignment.
